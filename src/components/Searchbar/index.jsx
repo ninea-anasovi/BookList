@@ -8,16 +8,22 @@ function SearchBar() {
   const {bookData, setBookData} = useContext(BookContext);
   const searchBook = (e) => {
     if(e.key==="Enter") {
+      e.preventDefault();
       handleSearch();
     }
   }
 
-  console.log(bookData)
-
   const handleSearch = () => {
-    axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+':keyes&key=AIzaSyBmGkQ3nZPAGtZIFEVYQW-iP8ncXU-Nygo'+'&maxResults=40')
-    .then(res=>setBookData(res.data.items))
-    .catch(err=>console.log(err))
+    let url='https://www.googleapis.com/books/v1/volumes'
+    // '?q='+search+':keyes&key=AIzaSyBmGkQ3nZPAGtZIFEVYQW-iP8ncXU-Nygo'+'&maxResults=40'
+    axios.get(url, {
+      params: {
+        q : search,
+        key: 'AIzaSyBmGkQ3nZPAGtZIFEVYQW-iP8ncXU-Nygo',
+        maxResults: 40
+      }
+    }).then( res => setBookData(res.data.items) )
+    .catch(err => console.log(err))
   }
 
   
@@ -38,9 +44,9 @@ function SearchBar() {
                   placeholder="Search Books..."
                   required/>
                 <button 
-                  type="submit" 
+                  type="button" 
                   className="text-white absolute right-0 bottom-0 top-0 bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-r-lg text-sm py-7 px-10"
-                  onSubmit={handleSearch}>
+                  onClick={handleSearch}>
                   Search
                 </button>
                 
