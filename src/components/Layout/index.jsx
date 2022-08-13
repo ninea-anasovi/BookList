@@ -8,11 +8,13 @@ function Layout() {
 
   const [bookData, setBookData] = useState ([])
 
-  return (
+  return (  
+
     <BookContext.Provider value={{bookData, setBookData}}>
         <HeroSection/>
         <Booklist/>
-    </BookContext.Provider>
+     </BookContext.Provider>
+
   )
 }
 
