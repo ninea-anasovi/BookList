@@ -10,7 +10,7 @@ function Booklist() {
 
   return (
     <>
-        <div className='m-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-7 gap-10 '>
+        <div className='m-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-20 '>
             {
                 bookData.map((item) => {
                     let thumbnail=item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail;
