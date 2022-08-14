@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchBar from '../Searchbar'
-import background from '../../Assets/images/hero-image.jpg'
+
 
 
 function HeroSection() {
