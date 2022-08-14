@@ -45,7 +45,7 @@ function SearchBar() {
                   required/>
                 <button 
                   type="button" 
-                  className="text-white absolute right-0 bottom-0 top-0 bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-r-lg text-sm py-7 px-10"
+                  className="text-white absolute right-0 bottom-0 top-0 bg-cyan-700 hover:bg-cyan-800  font-medium rounded-r-lg text-sm py-7 px-10"
                   onClick={handleSearch}>
                   Search
                 </button>
