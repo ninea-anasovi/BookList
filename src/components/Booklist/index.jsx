@@ -1,7 +1,8 @@
 import React from 'react'
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import Card from '../Card';
 import { BookContext } from '../../context';
+import Image from '../../Assets/images/image-not-available.png'
 
 function Booklist() {
 
@@ -17,7 +18,8 @@ function Booklist() {
                     let author = item.volumeInfo.authors
                     let bookName = item.volumeInfo.title;
                     let bookLink = item.volumeInfo.previewLink;
-                    return <Card key={index} image = {thumbnail} author={author} bookName={bookName} bookLink={bookLink}/>
+                    
+                    return <Card key={index} image = {thumbnail || Image} author={author} bookName={bookName} bookLink={bookLink}/>
                 })
             }
         </div>        
