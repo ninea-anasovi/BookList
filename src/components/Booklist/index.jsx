@@ -1,12 +1,13 @@
 import React from 'react'
 import { useContext } from 'react'
 import Card from '../Card';
-import { BookContext } from '../../context';
+import { BookContext, ModalContext } from '../../context';
 import Image from '../../Assets/images/image-not-available.png'
 
 function Booklist() {
 
-    const {bookData, setBookData} = useContext(BookContext);
+    const { bookData, setBookData } = useContext(BookContext);
+    const { show, setShow } = useContext(ModalContext);
 
 
   return (
@@ -18,8 +19,10 @@ function Booklist() {
                     let author = item.volumeInfo.authors
                     let bookName = item.volumeInfo.title;
                     let bookLink = item.volumeInfo.previewLink;
-                    
-                    return <Card key={index} image = {thumbnail || Image} author={author} bookName={bookName} bookLink={bookLink}/>
+                    let description=item.volumeInfo.description;
+                    let rating=item.volumeInfo.averageRating;
+                    let category=item.volumeInfo.categories;
+                    return <Card key={index} image = {thumbnail || Image} author={author} bookName={bookName} bookLink={bookLink} description={description} rating={rating} category={category}/>
                 })
             }
         </div>        
