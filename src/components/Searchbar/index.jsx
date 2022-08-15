@@ -15,7 +15,6 @@ function SearchBar() {
 
   const handleSearch = () => {
     let url='https://www.googleapis.com/books/v1/volumes'
-    // '?q='+search+':keyes&key=AIzaSyBmGkQ3nZPAGtZIFEVYQW-iP8ncXU-Nygo'+'&maxResults=40'
     axios.get(url, {
       params: {
         q : search,
@@ -25,6 +24,8 @@ function SearchBar() {
     }).then( res => setBookData(res.data.items) )
     .catch(err => console.log(err))
   }
+
+  console.log(bookData)
 
   
   return (

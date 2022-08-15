@@ -16,7 +16,8 @@ function Booklist() {
                     let thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail;
                     let author = item.volumeInfo.authors
                     let bookName = item.volumeInfo.title;
-                    return <Card key={index} image = {thumbnail} author={author} bookName={bookName}/>
+                    let bookLink = item.volumeInfo.previewLink;
+                    return <Card key={index} image = {thumbnail} author={author} bookName={bookName} bookLink={bookLink}/>
                 })
             }
         </div>        
