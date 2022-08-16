@@ -25,8 +25,6 @@ function SearchBar() {
     .catch(err => console.log(err))
   }
 
-  console.log(bookData)
-
   
   return (
     <>
